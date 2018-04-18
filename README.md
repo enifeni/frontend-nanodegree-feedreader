@@ -25,11 +25,11 @@ _Other requirements:_
 No test should be dependent on the results of another.
 Callbacks should be used to ensure that feeds are loaded before they are tested.
 
-### How to open this app
+## How to open this app
 
-Fork this repository, and/or clone it to you your local enviroment, and open the _index.html_ file. 
+Fork this repository, and/or clone it to you your local enviroment, and open the _index.html_ file.
 
 
-#### Built with
+## Built with
 * Jasmine
 * jQuery
