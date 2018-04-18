@@ -29,7 +29,7 @@ $(function() {
     it('have a URL defined, and that is not empty', function() {
       for (let i = 0; i < allFeeds.length; i++) {
         expect(allFeeds[i].url).toBeDefined();
-        expect(allFeeds[i].url).not.toBe(0);
+        expect(allFeeds[i].url.length).not.toBe(0);
       }
     });
     /* This test loops through each feed
@@ -39,7 +39,7 @@ $(function() {
     it('have a name defined, and that is not empty', function() {
       for (let i = 0; i < allFeeds.length; i++) {
         expect(allFeeds[i].name).toBeDefined();
-        expect(allFeeds[i].name).not.toBe(0);
+        expect(allFeeds[i].name.length).not.toBe(0);
       }
     });
   });
@@ -82,7 +82,7 @@ $(function() {
     });
 
     it('there is at least a single .entry element within the .feed container', function(done) {
-      expect($('.feed').children('.entry')).not.toBe(0);
+      expect($('.feed .entry').length).not.toBe(0);
       done();
     });
   });
@@ -97,18 +97,18 @@ $(function() {
      * we saved the HTML content of the .feed div, so that
      * we can compare this div's content after the click.
      */
-    var feed = 0;
     beforeEach(function(done) {
       loadFeed(0, function() {
-        feed += $('div.feed').html();
-        done();
+        firstFeed = $('div.feed').html();
+        loadFeed(1, function() {
+          newFeed = $('div.feed').html();
+          done();
+        });
       });
     });
 
     it('when a new feed is loaded by the loadFeed function that the content actually changes', function(done) {
-      const feedListItem = $('.feed-list li:nth-child(2) a');
-      feedListItem.trigger('click');
-      expect($('div.feed').html()).not.toEqual(feed);
+      expect(firstFeed).not.toEqual(newFeed);
       done();
     });
   });
