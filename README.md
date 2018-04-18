@@ -2,8 +2,6 @@
 
 Fifth project in the Google-Udacity Scholarship 2018.
 
-# Project Overview
-
 In this project I was given a web-based application that reads RSS feeds by Udacity. Udacity had included [Jasmine](http://jasmine.github.io/) and even started writing the first test suite, and my task was to finish all of the tests.
 
 ##  All test required to successfully run the application
